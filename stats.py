@@ -34,7 +34,6 @@ def count_carecters(text):
             'x' : 0,
             'y' : 0,
             'z' : 0,
-
         }
 
     for x in text_lowercase:
@@ -42,5 +41,16 @@ def count_carecters(text):
             dictionary[x] = dictionary[x] + 1
     return dictionary
 
-#def sorting(dictio):
-#
+def sorting(dictio):
+    sorted_dic = []
+
+    for i, x in dictio.items():
+        dic = {"char": i, "num": x}
+        sorted_dic.append(dic)
+
+    def sort_on(item):
+        return item["num"]
+
+    sorted_dic.sort(reverse=True, key=sort_on)
+
+    return sorted_dic
